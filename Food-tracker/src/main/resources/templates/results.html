@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<form action="#" th:action="@{/backToGet}" th:object="${food}" method="post">
+    <p th:text="'calories per serving: ' + ${food.getProduct().getNutriments().getEnergyKcal_serving()} + ${food.getProduct().getNutriments().getEnergyKcal_unit()}" />
+    <p th:text="'proteins per serving: ' + ${food.getProduct().getNutriments().getProteins_serving()} + ${food.getProduct().getNutriments().getProteins_unit()}"  />
+    <p th:text="'carbs per serving: ' + ${food.getProduct().getNutriments().getCarbohydrates_serving()} + ${food.getProduct().getNutriments().getCarbohydrates_unit()}" />
+    <p th:text="'fats per serving: ' + ${food.getProduct().getNutriments().getFat_serving()} + ${food.getProduct().getNutriments().getFat_unit()}" />
+    <p th:text="'calories per 100g: ' + ${food.getProduct().getNutriments().getEnergyKcal_100g()} + ${food.getProduct().getNutriments().getEnergyKcal_unit()}" />
+    <p th:text="'proteins per 100g: ' + ${food.getProduct().getNutriments().getProteins_100g()} + ${food.getProduct().getNutriments().getProteins_unit()}"  />
+    <p th:text="'carbs per 100g: ' + ${food.getProduct().getNutriments().getCarbohydrates_100g()} + ${food.getProduct().getNutriments().getCarbohydrates_unit()}" />
+    <p th:text="'fats per 100g ' + ${food.getProduct().getNutriments().getFat_100g()} + ${food.getProduct().getNutriments().getFat_unit()}" />
+    <p>add one serving? (add based on grams is under development)</p>
+    <input type="submit"/>
+</form>
+</body>
+</html>
